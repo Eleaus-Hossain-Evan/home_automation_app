@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:home_automation_app/routes/app.routes.dart';
-import 'package:home_automation_app/styles/themes.dart';
 
 void main() {
   runApp(
-    const ProviderScope(child: HomeAutomationApp())
+    const MyApp(),
   );
 }
 
-class HomeAutomationApp extends ConsumerWidget {
-  const HomeAutomationApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-
-    return MaterialApp.router(
-      title: 'Home Automation',
-      theme: HomeAutomationTheme.light,
-      darkTheme: HomeAutomationTheme.dark,
-      themeMode: ThemeMode.system,
-      debugShowCheckedModeBanner: false,
-      routeInformationProvider: AppRoutes.router.routeInformationProvider,
-      routeInformationParser: AppRoutes.router.routeInformationParser,
-      routerDelegate: AppRoutes.router.routerDelegate,
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyHomePage(),
     );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
