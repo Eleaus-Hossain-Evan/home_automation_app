@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:home_automation_app/routes/app.routes.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    const ProviderScope(child: HomeAutomationApp()),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class HomeAutomationApp extends StatelessWidget {
+  const HomeAutomationApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routeInformationProvider: AppRoutes.router.routeInformationProvider,
+      routeInformationParser: AppRoutes.router.routeInformationParser,
+      routerDelegate: AppRoutes.router.routerDelegate,
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
