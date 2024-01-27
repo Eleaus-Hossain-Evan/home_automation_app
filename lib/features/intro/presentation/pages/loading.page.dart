@@ -67,10 +67,6 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
       }
     }
 
-    // loadingTimer = Timer(const Duration(seconds: 4), () {
-    //   GoRouter.of(Utils.mainNav.currentContext!).go(HomePage.route);
-    // });
-
     final loadingComplete = ref.watch(loadingNotificationVMProvider);
     final loadingMessage = ref.watch(loadingMessageProvider);
 

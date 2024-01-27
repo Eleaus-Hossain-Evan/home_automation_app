@@ -4,6 +4,10 @@
         "Artboard",
         "boltanim",
         "flicky",
-        "flickylogo"
+        "flickybulb",
+        "flickylogo",
+        "xlarge",
+        "xsmall",
+        "xxsmall"
     ]
 }
